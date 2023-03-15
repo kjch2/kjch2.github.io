@@ -7,7 +7,7 @@ console.log("File Loaded");
 d3.csv("data/weekly_cases.csv", function(data) {
 
     var x = d3.scaleTime()
-    .domain(d3,extent(data, function(d) { return new Date(d.date); }))
+    .domain(d3.extent(data, function(d) { return new Date(d.date); }))
     .range([0, width]);
 
     var y = d3.scaleLinear()
