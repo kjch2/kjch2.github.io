@@ -16,7 +16,8 @@ d3.csv("data/weekly_cases.csv", function(data) {
 
     var xAxis = d3.axisBottom(x);
     var yAxis = d3.axisLeft(y);
-
+    
+    var colorScale = d3.scaleOrdinal(d3.schemeCategory10);
 
     var lineGenerators = [];
     var continents = ["Asia", "Europe", "Africa", "North America", "South America", "Oceania"]
