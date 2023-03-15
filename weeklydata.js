@@ -18,7 +18,7 @@ d3.csv("data/weekly_cases.csv", function(data) {
     var yAxis = d3.axisLeft(y);
 
 
-    var lineGenerator = [];
+    var lineGenerators = [];
     var continents = ["Asia", "Europe", "Africa", "North America", "South America", "Oceania"]
     var europe = ["Belgium", "Italy", "France", "United Kingdom", "Spain", "Sweden", "Denmark", "Russia", "Portugal", "Poland", "Norway", "Germany", "Luxembourg", "Greece"]
     var asia = ["China", "Japan", "India", "Indonesia", "Thailand", "Singapore", "Philippines", "Vietname", "Hong Kong", "Malaysia", "Mongolia", "Pakistan", "Taiwan", "Cambodia"]
@@ -28,7 +28,7 @@ d3.csv("data/weekly_cases.csv", function(data) {
     var southAmerica = ["Brazil", "Argentina", "Colombia", "Peru", "Chile", "Venezuela", "Ecuador", "Bolivia", "Uruguay", "Guyana", "Paraguay"]
     
     continents.forEach(function(column) {
-        lineGenerator.push(d3.line())
+        lineGenerators.push(d3.line())
         .x(function(d) { return x(new Date(d.date)); })
         .y(function(d) { return y(+d[column]); })
     });
