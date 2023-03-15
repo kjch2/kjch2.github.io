@@ -45,7 +45,7 @@ d3.csv("data/weekly_cases.csv", function(data) {
         .enter().append("path")
             .attr("class", "line")
             .attr("d", function(column) { return lineGenerators[continents.indexOf(column)](data); })
-            .style("stroke", function(column) { return color(column); });
+            .style("stroke", function(column) { return colorScale(column); });
     
     svg.append("g")
         .attr("class", "axis")
