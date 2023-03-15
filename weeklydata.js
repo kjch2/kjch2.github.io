@@ -28,9 +28,9 @@ d3.csv("data/weekly_cases.csv", function(data) {
     var southAmerica = ["Brazil", "Argentina", "Colombia", "Peru", "Chile", "Venezuela", "Ecuador", "Bolivia", "Uruguay", "Guyana", "Paraguay"]
     
     continents.forEach(function(column) {
-        lineGenerators.push(d3.line())
+        lineGenerators.push(d3.line()
         .x(function(d) { return x(new Date(d.date)); })
-        .y(function(d) { return y(+d[column]); })
+        .y(function(d) { return y(+d[column]); }));
     });
 
     var svg = d3.select("#line-graph")
