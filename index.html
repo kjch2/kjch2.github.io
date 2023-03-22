@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>COVID Data Explorer</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
+    <script src="script2.js"></script>
+    <script src="script3.js"></script>
+
+  </head>
+
+  <body>
+    <div id="line-graph"></div>
+    <div id="chart"></div>
+    <div id="bar-chart"></div>
+    
+    <script>
+
+        //Create buttons that display COVID growth over time
+        const growthButton = document.createElement('button');
+        const totalButton = document.createElement('button');
+        const gdpButton = document.createElement('button');
+
+        //Set the button text and add event listener, display related data when clicked
+        growthButton.innerText = 'View Pandemic Growth Across the Globe';
+        growthButton.addEventListener('click', function() {
+            showLineGraphPage()
+            growthButton.remove()
+        });
+        document.body.appendChild(growthButton);
+
+        totalButton.innerText = 'Compare Total Cases by Country';
+        totalButton.addEventListener('click', function() {
+          showTreeMapPage()
+          totalButton.remove()
+        });
+        document.body.appendChild(totalButton);
+
+        gdpButton.innerText = 'Compare GDP to Total Cases Per Million';
+        gdpButton.addEventListener('click', function() {
+          showScatterPlotPage()
+          gdpButton.remove()
+        });
+        document.body.appendChild(gdpButton);
+
+    </script>
+
+  </body>
+
+</html>
